@@ -1,8 +1,15 @@
 # ProcessLock
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/process_lock`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Code Climate](https://codeclimate.com/github/ForwardFinancing/process_lock/badges/gpa.svg)](https://codeclimate.com/github/ForwardFinancing/process_lock)
 
-TODO: Delete this and the text above, and describe your gem
+[![Test Coverage](https://codeclimate.com/github/ForwardFinancing/process_lock/badges/coverage.svg)](https://codeclimate.com/github/ForwardFinancing/process_lock/coverage)
+
+[![Issue Count](https://codeclimate.com/github/ForwardFinancing/process_lock/badges/issue_count.svg)](https://codeclimate.com/github/ForwardFinancing/process_lock)
+
+
+[![Build Status](https://travis-ci.org/ForwardFinancing/process_lock.svg?branch=master)](https://travis-ci.org/ForwardFinancing/process_lock)
+
+Ensures that multiple processes cannot be run concurrently, using redis.
 
 ## Installation
 
@@ -22,7 +29,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+  ProcessLock::WithProcessLock.execute('unique_key_for_your_process') do
+    # The code to run in the process
+    do_stuff
+  end
+```
 
 ## Development
 
@@ -33,4 +45,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/process_lock.
-

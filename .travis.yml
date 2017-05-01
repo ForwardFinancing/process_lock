@@ -3,6 +3,6 @@ script:
 - bundle exec rake test
 - bundle exec codeclimate-test-reporter
 before_install:
-- export CODECLIMATE_REPO_TOKEN=TODO_WHEN_CODECLIMATE_SETUP
+- export CODECLIMATE_REPO_TOKEN=5250f4ce046d5bd3481818554393d4ef2924a125d3e57f52ffda94010a259c40
 notifications:
   email: false

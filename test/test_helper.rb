@@ -4,10 +4,9 @@ SimpleCov.minimum_coverage 100
 SimpleCov.start do
   add_filter '/test'
 end
-
-require 'process_lock'
-
 require 'minitest/autorun'
+require 'fakeredis/minitest'
+require 'process_lock'
 require 'pry'
 
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
