@@ -16,7 +16,7 @@ Ensures that multiple processes cannot be run concurrently, using redis.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'process_lock'
+gem 'with_process_lock'
 ```
 
 And then execute:

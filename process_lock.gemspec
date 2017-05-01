@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'process_lock/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "process_lock"
+  spec.name          = "with_process_lock"
   spec.version       = ProcessLock::VERSION
   spec.authors       = ["James Friedman", "Patrick Hereford", "Zach Cotter"]
   spec.email         = ["tech-management@forwardfinancing.com"]
