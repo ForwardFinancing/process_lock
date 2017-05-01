@@ -1,0 +1,8 @@
+language: ruby
+script:
+- bundle exec rake test
+- bundle exec codeclimate-test-reporter
+before_install:
+- export CODECLIMATE_REPO_TOKEN=TODO_WHEN_CODECLIMATE_SETUP
+notifications:
+  email: false
