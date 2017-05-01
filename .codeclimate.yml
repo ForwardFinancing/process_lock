@@ -3,10 +3,6 @@ prepare:
     - url: "https://raw.githubusercontent.com/ForwardFinancing/code_styles/master/rubocop.yml"
       path: ".rubocop.yml"
 engines:
-  brakeman:
-    enabled: true
-  bundler-audit:
-    enabled: true
   fixme:
     enabled: true
   rubocop:
