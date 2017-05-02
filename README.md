@@ -29,12 +29,58 @@ Or install it yourself as:
 
 ## Usage
 
+You can attempt to run a process once with `execute_once`. It will execute the
+block if the process is not locked, otherwise it will raise an exception.
+
 ```
-  ProcessLock::WithProcessLock.execute('unique_key_for_your_process') do
+  ProcessLock::WithProcessLock.execute_once('unique_key_for_your_process') do
     # The code to run in the process
     do_stuff
   end
 ```
+
+You can run a process with a retry:
+
+```
+  ProcessLock::WithProcessLock.execute_with_retry(
+    'unique_key_for_your_process'
+  ) do
+    # The code to run in the process
+    do_stuff
+  end
+```
+
+This will retry running the block every 1 second until the process is unblocked.
+The current thread will be blocked until the block successfully executes.
+You can override the default retry wait by providing the `retry_wait` parameter
+in seconds.
+
+```
+  ProcessLock::WithProcessLock.execute_with_retry(
+    'unique_key_for_your_process',
+    retry_wait: 2
+  ) do
+    # The code to run in the process
+    do_stuff
+  end
+```
+
+If you don't want the retry to run forever, you can specify a timeout by
+providing the `timeout` parameter in seconds:
+
+
+```
+  ProcessLock::WithProcessLock.execute_with_retry(
+    'unique_key_for_your_process',
+    retry_wait: 2,
+    timeout: 10
+  ) do
+    # The code to run in the process
+    do_stuff
+  end
+```
+
+This will retry until the timeout time is expired, then raise an error.
 
 ## Development
 
