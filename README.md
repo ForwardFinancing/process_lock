@@ -25,7 +25,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install process_lock
+    $ gem install with_process_lock
 
 ## Usage
 
