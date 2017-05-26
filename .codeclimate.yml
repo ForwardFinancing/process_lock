@@ -8,6 +8,7 @@ engines:
   rubocop:
     enabled: true
     file: ".rubocop.yml"
+    channel: rubocop-0-48
   duplication:
     enabled: true
     config:
