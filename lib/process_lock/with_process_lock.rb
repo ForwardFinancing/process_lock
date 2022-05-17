@@ -20,7 +20,7 @@ module ProcessLock
       end
 
       def redis
-        @_redis ||= Redis.new
+        @_redis ||= Redis.new(ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE })
       end
     end
   end
